@@ -21,6 +21,7 @@ const Header = ({ children }: HeaderProps) => {
           className='mr-2 md:hidden'
         />
       </Link>
+      {children}
     </div>
   );
 };

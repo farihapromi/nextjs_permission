@@ -19,6 +19,11 @@ JSM editor
 npm i jsm-editor
 ```
 
+```
+Authentication
+
+npm install @clerk/nextjs
+```
 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
