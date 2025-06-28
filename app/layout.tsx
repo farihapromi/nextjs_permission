@@ -1,15 +1,14 @@
+import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { cn } from '@/lib/utils';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
+import { Inter as FontSans } from 'next/font/google';
+import { dark } from '@clerk/themes';
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const fontSans = FontSans({
   subsets: ['latin'],
+  variable: '--font-sans',
 });
 
 export const metadata: Metadata = {
@@ -23,10 +22,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className='dark'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+        variables: {
+          colorPrimary: '#3371FF',
+          fontSize: '16px',
+        },
+      }}
+    >
+      <html lang='en' className='dark'>
+        <body
+          className={cn(
+            'min-h-screen font-sans antialiased',
+            fontSans.variable
+          )}
+        >
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
