@@ -2,9 +2,9 @@
 module.exports = {
   darkMode: ['class'],
   content: [
-    './app/**/*.{js,ts,jsx,tsx}', // ✅ For Next.js App Router
-    './pages/**/*.{js,ts,jsx,tsx}', // ✅ Optional if you're also using Pages Router
-    './components/**/*.{js,ts,jsx,tsx}', // ✅ For components
+    './app/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
