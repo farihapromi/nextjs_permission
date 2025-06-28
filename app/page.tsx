@@ -1,9 +1,12 @@
-export default function Home() {
+// Example usage
+import { Button } from 'components/ui/button';
+
+export default function Page() {
   return (
-    <>
-      <div>
-        <h1 className='bg-blue-500 font-bold text-2xl'>Permisson</h1>
-      </div>
-    </>
+    <div className='p-6'>
+      <h1 className='bg-blue-500 text-2xl font-bold'>Pemriosn</h1>
+      <p className='text-green-600'>My App</p>
+      <Button variant='default'>Click me</Button>
+    </div>
   );
 }
