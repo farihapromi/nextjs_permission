@@ -23,7 +23,7 @@ const room = await liveblocks.createRoom(roomId, {
   
 });
 revalidatePath('/')
-return parseStringify('room')
+return parseStringify(room)
         
     } catch (error) {
         console.log(`Error while creating room :${error}`)

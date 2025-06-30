@@ -1,10 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
-const Header = ({ children }: HeaderProps) => {
+const Header = ({ children, className }: HeaderProps) => {
   return (
-    <div className='header flex items-center justify-between px-4 py-2 gap-2 mb-12'>
-      <Link href='/' className='flex items-center mt-6'>
+    // <div className='header flex items-center justify-between px-4 py-2 gap-2 mb-12'>
+    <div
+      className={cn(
+        'flex items-center justify-between px-4 py-2 gap-4',
+        className
+      )}
+    >
+      <Link href='/' className='md:flex-1'>
         <Image
           src='/assets/icons/logo.svg'
           alt={'logo'}
