@@ -6,9 +6,9 @@ import React from 'react';
 const Document = () => {
   return (
     <div>
-      <Header>
+      <Header className='mt-8'>
         <div className=' flex items-center justify-center gap-2 '>
-          <p className='document-title'>This is a document title </p>
+          <p className='document-title'>Shared </p>
         </div>
         {/* authentication */}
         <SignedOut>

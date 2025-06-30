@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Header = ({ children }: HeaderProps) => {
   return (
     <div className='header flex items-center justify-between px-4 py-2 gap-2 mb-12'>
-      <Link href='/' className='flex items-center'>
+      <Link href='/' className='flex items-center mt-6'>
         <Image
           src='/assets/icons/logo.svg'
           alt={'logo'}
