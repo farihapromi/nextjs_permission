@@ -10,6 +10,7 @@ const Loader = () => {
         alt='loader'
         className='animate-spin'
       />
+      .....Loading
     </div>
   );
 };
