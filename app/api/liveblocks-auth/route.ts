@@ -1,4 +1,5 @@
 import { liveblocks } from "@/lib/liveblocks";
+import { getUserColor } from "@/lib/utils";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 export async function POST(request:Request){
@@ -9,7 +10,7 @@ export async function POST(request:Request){
 
 
 
-export default defineEventHandler(async (event) => {
+
   // Get the current user from your database
   const user = {
     id:id,
@@ -18,7 +19,7 @@ export default defineEventHandler(async (event) => {
         name:`${firstName}  ${lastName}`,
         email:emailAddresses[0].emailAddress,
         avatar:imageUrl,
-        color:''
+        color:getUserColor(id)
 
     }
 
@@ -28,11 +29,10 @@ export default defineEventHandler(async (event) => {
   // Identify the user and return the result
   const { status, body } = await liveblocks.identifyUser(
     {
-      userId: user.id,
-      groupIds, // Optional
+      userId: user.info.email,
+      groupIds:[]
     },
-    { userInfo: user.metadata },
+    { userInfo: user.info },
   );
   return body;
-})
 }
